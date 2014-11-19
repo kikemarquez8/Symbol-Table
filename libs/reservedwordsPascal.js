@@ -1,5 +1,5 @@
 function createSymbolTable() {
-    var reservedWords = new HashMap('string', 'string');
+    this.reservedWords = new HashMap('string', 'string');
 
     reservedWords.put('absolute', 'Memory Addressing');
     reservedWords.put('and', 'Logical Operator');
