@@ -44,12 +44,16 @@ function createSymbolTable(){
     reservedwords.put('shr','Operator Right Bit Shift');
     reservedwords.put('string','Data Type');
     reservedwords.put('then','Conditional Initiator');
-    reservedworkds.put('to','Delimitator');
-    reservedworkds.put('type','Type Declaration');
-    reservedworkds.put('unit','Unit Specification');
-    reservedworkds.put('uses','Used Units');
-    reservedworkds.put('var','Variable Declaration');
-    reservedworkds.put('while','Loop Instruction');
-    reservedworkds.put('with','Element Accesor');
-    reservedworkds.put('xor','Logical Operator');
+    reservedwords.put('to','Delimitator');
+    reservedwords.put('type','Type Declaration');
+    reservedwords.put('unit','Unit Specification');
+    reservedwords.put('uses','Used Units');
+    reservedwords.put('var','Variable Declaration');
+    reservedwords.put('while','Loop Instruction');
+    reservedwords.put('with','Element Accesor');
+    reservedwords.put('xor','Logical Operator');
+    reservedwords.put('-','Arithmetic Operator');
+    reservedwords.put('+','Arithmetic Operator');
+    reservedwords.put('*','Arithmetic Operator');
+    reservedwords.put('/','Arithmetic Operator');    
 }
