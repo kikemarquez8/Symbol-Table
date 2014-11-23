@@ -1,3 +1,4 @@
+var reservedwords;
 function createSymbolTable(){
     reservedwords = new HashMap('string','string');
     reservedwords.put('absolute','Memory Addressing');
@@ -42,7 +43,7 @@ function createSymbolTable(){
     reservedwords.put('set','Type Variable');
     reservedwords.put('shl','Operator Left Bit Shift');
     reservedwords.put('shr','Operator Right Bit Shift');
-    reservedwords.put('string','Data Type');
+    reservedwords.put('string','Variable Type');
     reservedwords.put('then','Conditional Initiator');
     reservedwords.put('to','Delimitator');
     reservedwords.put('type','Type Declaration');
@@ -56,4 +57,81 @@ function createSymbolTable(){
     reservedwords.put('+','Arithmetic Operator');
     reservedwords.put('*','Arithmetic Operator');
     reservedwords.put('/','Arithmetic Operator');    
+    reservedwords.put('<','Relational Operator');
+    reservedwords.put('<=','Relational Operator');
+    reservedwords.put('>=','Relational Operator');
+    reservedwords.put(':=','Relational Operator');
+    reservedwords.put('=','Assignment Operator');
+    reservedwords.put(':','Type Declaration');
+    reservedwords.put('integer','Variable Type');
+    reservedwords.put(',','Separator');
+    reservedwords.put(';','End');
+    reservedwords.put('(','Expression Begin');
+    reservedwords.put(')','Expression End');
+    reservedwords.put('return','');
+    reservedwords.put("'", 'String Delimitator');
+}
+var a ="k := 510+8-b;";
+createSymbolTable();
+window.onload = function(){
+var ver = document.getElementById('verifica');
+if(ver){
+  ver.addEventListener('click', verify, false);
+}
+}
+
+function verify(){
+    var data=document.getElementById('pascal').value;
+    var reg= reservedwords.getEntries();
+    var protoident= {key: null, value: null, position:null};
+    var identifier=[];
+    var b=data;
+    for(var i =0; i< reg.length;i++)
+    {
+        var index= b.indexOf(reg[i].key);
+        if(index != -1)
+        {   
+            var aux = Object.create(protoident);
+            aux.key=reg[i].key;
+            aux.value=reg[i].value;
+            aux.position=index;
+            identifier.push(aux);
+            b=b.replace(reg[i].key,spaceSetter(reg[i].key.length));
+        }
+    }
+    var remainder= b.split(" ");
+    for(var i = 0; i<remainder.length;i++)
+    {
+        var condition=isNaN(parseInt(remainder[i]));
+        if(remainder[i].length>0 && condition )
+        {
+            var aux= Object.create(protoident);
+            aux.key=remainder[i];
+            aux.value='Variable';
+            aux.position=data.indexOf(remainder[i]);
+            identifier.push(aux);            
+        }
+        else if(!condition)
+        {
+            var aux2 = Object.create(protoident);
+            aux2.key=remainder[i];
+            aux2.value='Number';
+            aux2.position=data.indexOf(remainder[i]);
+            identifier.push(aux2);
+        }
+    }
+    identifier.sort(function compare(a,b){return a.position-b.position;});
+    for(var i = 0; i<identifier.length;i++){
+        var result= document.createElement('h3');
+        console.log(identifier[i].key + ' ||| '+identifier[i].value+"\n")
+        result.innerHTML=identifier[i].key + ' ||| '+identifier[i].value+"<br />";
+    }
+}
+function spaceSetter(len) {
+    var returnstr= "";
+    for (var i = 0 ; i<len;i++)
+    {
+        returnstr+= " ";
+    }
+    return returnstr;
 }
