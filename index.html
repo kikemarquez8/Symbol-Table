@@ -2,12 +2,44 @@
 <html>
 <head lang="en">
 	<script type="application/javascript" src="libs/HashMap.js"></script>
-	<script type="application/javascript" src="libs/reservedwordsPascal.js"></script>
+	<script type="application/javascript" src="libs/bower/jquery/dist/jquery.min.js"></script>
+	<script type="application/javascript" src="libs/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="libs/bower/bootstrap/dist/css/bootstrap.min.css"/>
 	<meta charset="UTF-8">
 	<title></title>
 </head>
 <body>
-	<input type="text" placeholder="Ingrese expresion en Pascal" id="pascal">
-	<button id="verifica">Verificar</button>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="">
+				<!--<img src="pics/Pascal.jpg" width="100px" height="50" alt="Pascal Icon"/>-->
+				Evaluador de Expresiones
+			</a>
+		</div>
+		<div>
+			<form class="navbar-form navbar-left" role="button">
+				<div class="form-group">
+					<input id="pascal" type="text" class="form-control" placeholder="Ingrese expresión">
+				</div>
+				<input id="verifica" type="button" class="btn btn-primary btnSeccion" value="verificar"/>
+			</form>
+		</div>
+	</nav>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Salida del programa
+		</div>
+		<div class="panel-body">
+			<textarea id="area" class="form-control" rows="10"></textarea>
+		</div>
+	</div>
+	<script type="application/javascript" src="libs/reservedwordsPascal.js"></script>
 </body>
 </html>

@@ -131,9 +131,9 @@ function verify() {
 	});
 
 	for (var i = 0; i < identifier.length; i++) {
-		var result = document.createElement('h3');
-		console.log(identifier[i].key + ' ||| ' + identifier[i].value + "\n")
-		result.innerHTML = identifier[i].key + ' ||| ' + identifier[i].value + "<br />";
+		var exit = document.getElementById('area');
+		exit.innerHTML += identifier[i].key + ' ||| ' + identifier[i].value + "\n";
+		console.log(identifier[i].key + ' ||| ' + identifier[i].value + "\n");
 	}
 }
 function spaceSetter(len) {
