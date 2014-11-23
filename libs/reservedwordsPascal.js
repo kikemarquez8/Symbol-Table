@@ -86,14 +86,18 @@ window.onload = function () {
 function verify() {
 	var data = document.getElementById('pascal').value;
 	var reg = reservedWords.getEntries();
-	var protoident = {key: null, value: null, position: null};
+	var protoIdentation = {
+		key: null,
+		value: null,
+		position: null
+	};
 	var identifier = [];
 	var b = data;
 
 	for (var i = 0; i < reg.length; i++) {
 		var index = b.indexOf(reg[i].key);
 		if (index != -1) {
-			var aux = Object.create(protoident);
+			var aux = Object.create(protoIdentation);
 			aux.key = reg[i].key;
 			aux.value = reg[i].value;
 			aux.position = index;
@@ -107,14 +111,14 @@ function verify() {
 	for (var i = 0; i < remainder.length; i++) {
 		var condition = isNaN(parseInt(remainder[i]));
 		if (remainder[i].length > 0 && condition) {
-			var aux = Object.create(protoident);
+			var aux = Object.create(protoIdentation);
 			aux.key = remainder[i];
 			aux.value = 'Variable';
 			aux.position = data.indexOf(remainder[i]);
 			identifier.push(aux);
 		}
 		else if (!condition) {
-			var aux2 = Object.create(protoident);
+			var aux2 = Object.create(protoIdentation);
 			aux2.key = remainder[i];
 			aux2.value = 'Number';
 			aux2.position = data.indexOf(remainder[i]);
