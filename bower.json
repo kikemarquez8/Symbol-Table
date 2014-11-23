@@ -1,0 +1,21 @@
+{
+  "name": "Symbol-Table",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kikemarquez8/Symbol-Table",
+  "authors": [
+    "Alberto Bonsanto",
+    "Orangel Marquez"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
