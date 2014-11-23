@@ -77,10 +77,11 @@ var a = "k := 510+8-b;";
 createSymbolTable();
 
 window.onload = function () {
-	var ver = document.getElementById('verifica');
-	if (ver) {
-		ver.addEventListener('click', verify, false);
-	}
+	document.getElementById('verifica').addEventListener('click', verify, false);
+	//TODO: ADD Enter key pressed.
+	//document.getElementById('pascal').addEventListener('onkeydown', function(ev){
+	//	if (ev.keyCode === 13) verify();
+	//}, false);
 };
 
 function verify() {
@@ -130,8 +131,8 @@ function verify() {
 		return a.position - b.position;
 	});
 
+	var exit = document.getElementById('area');
 	for (var i = 0; i < identifier.length; i++) {
-		var exit = document.getElementById('area');
 		exit.innerHTML += identifier[i].key + ' ||| ' + identifier[i].value + "\n";
 		console.log(identifier[i].key + ' ||| ' + identifier[i].value + "\n");
 	}
