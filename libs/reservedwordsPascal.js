@@ -61,8 +61,8 @@ function createSymbolTable() {
 	reservedWords.put('<', 'Relational Operator');
 	reservedWords.put('<=', 'Relational Operator');
 	reservedWords.put('>=', 'Relational Operator');
-	reservedWords.put(':=', 'Relational Operator');
-	reservedWords.put('=', 'Assignment Operator');
+	reservedWords.put(':=', 'Assignment Operator');
+	reservedWords.put('=', 'Relational Operator');
 	reservedWords.put(':', 'Type Declaration');
 	reservedWords.put('integer', 'Variable Type');
 	reservedWords.put(',', 'Separator');
