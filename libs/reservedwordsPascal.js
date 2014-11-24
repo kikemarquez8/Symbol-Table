@@ -59,6 +59,7 @@ function createSymbolTable() {
 	reservedWords.put('*', 'Arithmetic Operator');
 	reservedWords.put('/', 'Arithmetic Operator');
 	reservedWords.put('<', 'Relational Operator');
+	reservedWords.put('>', 'Relational Operator');
 	reservedWords.put('<=', 'Relational Operator');
 	reservedWords.put('>=', 'Relational Operator');
 	reservedWords.put(':=', 'Assignment Operator');
