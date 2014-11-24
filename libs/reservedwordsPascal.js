@@ -85,6 +85,7 @@ window.onload = function () {
 };
 
 function verify() {
+	var exit = document.getElementById('area');
 	var data = document.getElementById('pascal').value;
 	var reg = reservedWords.getEntries();
 	var protoIdentation = {
@@ -94,6 +95,7 @@ function verify() {
 	};
 	var identifier = [];
 	var b = data;
+	var remainder;
 
 	for (var i = 0; i < reg.length; i++) {
 		var index = b.indexOf(reg[i].key);
@@ -107,7 +109,7 @@ function verify() {
 		}
 	}
 
-	var remainder = b.split(" ");
+	remainder = b.split(" ");
 
 	for (var i = 0; i < remainder.length; i++) {
 		var condition = isNaN(parseInt(remainder[i]));
@@ -131,11 +133,12 @@ function verify() {
 		return a.position - b.position;
 	});
 
-	var exit = document.getElementById('area');
+	exit.innerHTML += "La expresión es: " + data + "\n";
 	for (var i = 0; i < identifier.length; i++) {
 		exit.innerHTML += identifier[i].key + ' ||| ' + identifier[i].value + "\n";
 		console.log(identifier[i].key + ' ||| ' + identifier[i].value + "\n");
 	}
+	exit.innerHTML += "\n";
 }
 function spaceSetter(len) {
 	var str = "";
