@@ -106,11 +106,13 @@ function verify() {
 			aux.position = index;
 			identifier.push(aux);
 			b = b.replace(reg[i].key, spaceSetter(reg[i].key.length));
+            if(b.indexOf(reg[i].key) != -1)
+                i-=1;
 		}
 	}
 
 	remainder = b.split(" ");
-
+    
 	for (var i = 0; i < remainder.length; i++) {
 		var condition = isNaN(parseInt(remainder[i]));
 		if (remainder[i].length > 0 && condition) {
